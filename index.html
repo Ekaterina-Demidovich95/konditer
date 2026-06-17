@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кусочек счастья — Авторские торты ручной работы</title>
+  <meta name="description" content="Авторские торты и десерты ручной работы в Гагарине. Натуральные ингредиенты, заказ на любой праздник.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 1. Шапка (Header) -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="header__logo">Кусочек счастья</a>
+
+      <nav class="header__nav" id="nav">
+        <a href="#hero" class="header__link">Главная</a>
+        <a href="#catalog" class="header__link">Каталог</a>
+        <a href="#order-steps" class="header__link">Как заказать</a>
+        <a href="#reviews" class="header__link">Отзывы</a>
+        <a href="#contacts" class="header__link">Контакты</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="tel:+79991234567" class="header__phone" aria-label="Позвонить">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </a>
+        <a href="#contacts" class="btn btn--primary btn--sm">Заказать торт</a>
+      </div>
+
+      <button class="header__burger" id="burger" aria-label="Открыть меню" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- 2. Первый экран (Hero) -->
+    <section class="hero" id="hero">
+      <div class="hero__overlay"></div>
+      <div class="container hero__content">
+        <h1 class="hero__title">Авторские торты ручной работы</h1>
+        <p class="hero__subtitle">Готовлю с любовью на заказ в Гагарине. Натуральные ингредиенты и неповторимый вкус</p>
+        <div class="hero__buttons">
+          <a href="#catalog" class="btn btn--primary">Посмотреть каталог</a>
+          <a href="#contacts" class="btn btn--outline">Заказать торт</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Обо мне -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__photo-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&h=500&fit=crop&crop=face"
+              alt="Анна — кондитер"
+              class="about__photo"
+              loading="lazy"
+            >
+          </div>
+          <div class="about__text">
+            <h2 class="section__title">Привет, я Анна!</h2>
+            <p class="about__description">
+              Уже более 5 лет я создаю десерты, которые дарят радость. Каждый торт готовлю вручную, с вниманием к деталям и только из натуральных продуктов. Для меня кондитерское дело — это не просто работа, а способ дарить людям маленькие кусочки счастья.
+            </p>
+            <div class="about__badges">
+              <div class="badge">5 лет опыта</div>
+              <div class="badge">500+ счастливых клиентов</div>
+              <div class="badge">Только натуральные продукты</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Каталог -->
+    <section class="catalog section" id="catalog">
+      <div class="container">
+        <h2 class="section__title section__title--center">Мои десерты</h2>
+
+        <div class="catalog__filters">
+          <button class="filter-btn filter-btn--active" data-filter="all">Все</button>
+          <button class="filter-btn" data-filter="cakes">Торты</button>
+          <button class="filter-btn" data-filter="cupcakes">Капкейки</button>
+          <button class="filter-btn" data-filter="pastries">Пирожные</button>
+          <button class="filter-btn" data-filter="cookies">Печенье</button>
+        </div>
+
+        <div class="catalog__grid">
+          <article class="card" data-category="cakes">
+            <div class="card__image-wrap">
+              <img src="https://images.unsplash.com/photo-1586985289688-ca3cf47d3e6e?w=600&h=400&fit=crop" alt="Торт «Красный бархат»" class="card__image" loading="lazy">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Торт «Красный бархат»</h3>
+              <p class="card__price">от 2500 ₽</p>
+              <a href="#contacts" class="btn btn--primary btn--full">Заказать</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="cakes">
+            <div class="card__image-wrap">
+              <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=400&fit=crop" alt="Торт «Шоколадный трюфель»" class="card__image" loading="lazy">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Торт «Шоколадный трюфель»</h3>
+              <p class="card__price">от 2800 ₽</p>
+              <a href="#contacts" class="btn btn--primary btn--full">Заказать</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="cupcakes">
+            <div class="card__image-wrap">
+              <img src="https://images.unsplash.com/photo-1614707267537-b85a32c43fa0?w=600&h=400&fit=crop" alt="Капкейки «Ванильное облако»" class="card__image" loading="lazy">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Капкейки «Ванильное облако»</h3>
+              <p class="card__price">от 1200 ₽ за 6 шт.</p>
+              <a href="#contacts" class="btn btn--primary btn--full">Заказать</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="pastries">
+            <div class="card__image-wrap">
+              <img src="https://images.unsplash.com/photo-1528736235302-52922df5c8ca?w=600&h=400&fit=crop" alt="Пирожное «Эклер классический»" class="card__image" loading="lazy">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Пирожное «Эклер классический»</h3>
+              <p class="card__price">от 250 ₽ за шт.</p>
+              <a href="#contacts" class="btn btn--primary btn--full">Заказать</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="cakes">
+            <div class="card__image-wrap">
+              <img src="https://images.unsplash.com/photo-1621303833534-6d2d19aa81b9?w=600&h=400&fit=crop" alt="Торт «Морковный с орехами»" class="card__image" loading="lazy">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Торт «Морковный с орехами»</h3>
+              <p class="card__price">от 2400 ₽</p>
+              <a href="#contacts" class="btn btn--primary btn--full">Заказать</a>
+            </div>
+          </article>
+
+          <article class="card" data-category="cookies">
+            <div class="card__image-wrap">
+              <img src="https://images.unsplash.com/photo-1548365328-9f547fb0803a?w=600&h=400&fit=crop" alt="Печенье «Имбирные пряники»" class="card__image" loading="lazy">
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Печенье «Имбирные пряники»</h3>
+              <p class="card__price">от 800 ₽ за набор</p>
+              <a href="#contacts" class="btn btn--primary btn--full">Заказать</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Как заказать -->
+    <section class="order-steps section" id="order-steps">
+      <div class="container">
+        <h2 class="section__title section__title--center">Как сделать заказ</h2>
+
+        <div class="steps">
+          <div class="step">
+            <span class="step__emoji">📞</span>
+            <span class="step__number">1</span>
+            <h3 class="step__title">Оставьте заявку</h3>
+            <p class="step__text">Напишите или позвоните, расскажите о вашем празднике</p>
+          </div>
+
+          <div class="step">
+            <span class="step__emoji">🎨</span>
+            <span class="step__number">2</span>
+            <h3 class="step__title">Обсуждаем детали</h3>
+            <p class="step__text">Вместе выбираем вкус, дизайн и размер десерта</p>
+          </div>
+
+          <div class="step">
+            <span class="step__emoji">👩‍🍳</span>
+            <span class="step__number">3</span>
+            <h3 class="step__title">Готовлю с любовью</h3>
+            <p class="step__text">Создаю ваш десерт из свежих натуральных продуктов</p>
+          </div>
+
+          <div class="step">
+            <span class="step__emoji">🚗</span>
+            <span class="step__number">4</span>
+            <h3 class="step__title">Доставка или самовывоз</h3>
+            <p class="step__text">Привезу торт к указанному времени или заберёте сами</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Отзывы -->
+    <section class="reviews section" id="reviews">
+      <div class="container">
+        <h2 class="section__title section__title--center">Что говорят мои клиенты</h2>
+
+        <div class="reviews__grid">
+          <article class="review-card">
+            <div class="review-card__header">
+              <span class="review-card__name">Мария</span>
+              <span class="review-card__stars" aria-label="5 звёзд">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="review-card__text">«Заказывала торт на день рождения дочки. Это был восторг! Красиво, вкусно и точно в срок. Спасибо за праздник!»</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__header">
+              <span class="review-card__name">Дмитрий</span>
+              <span class="review-card__stars" aria-label="5 звёзд">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="review-card__text">«Лучшие капкейки, которые я пробовал. Натуральный вкус, без приторности. Теперь только здесь!»</p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__header">
+              <span class="review-card__name">Елена</span>
+              <span class="review-card__stars" aria-label="5 звёзд">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="review-card__text">«Анна — настоящий мастер своего дела. Торт на свадьбу превзошёл все ожидания. Гости были в восторге!»</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Форма заказа и контакты -->
+    <section class="contacts section" id="contacts">
+      <div class="container">
+        <h2 class="section__title section__title--center">Оставьте заявку</h2>
+
+        <div class="contacts__grid">
+          <form class="order-form" id="orderForm" novalidate>
+            <div class="form-group">
+              <label for="name" class="form-label">Ваше имя</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="Как вас зовут?" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone" class="form-label">Телефон</label>
+              <input type="tel" id="phone" name="phone" class="form-input" placeholder="+7 (___) ___-__-__" required>
+            </div>
+
+            <div class="form-group">
+              <label for="order" class="form-label">Что хотите заказать</label>
+              <textarea id="order" name="order" class="form-textarea" rows="4" placeholder="Опишите ваш десерт мечты"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="date" class="form-label">Дата</label>
+              <input type="date" id="date" name="date" class="form-input">
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+
+            <p class="form-success" id="formSuccess" hidden>
+              Спасибо! Я свяжусь с вами в ближайшее время 💕
+            </p>
+          </form>
+
+          <div class="contacts__info">
+            <h3 class="contacts__title">Свяжитесь со мной</h3>
+            <ul class="contacts__list">
+              <li class="contacts__item">
+                <span class="contacts__icon">📞</span>
+                <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+              </li>
+              <li class="contacts__item">
+                <span class="contacts__icon">💬</span>
+                <a href="https://t.me/kusochek_schastya" target="_blank" rel="noopener noreferrer">@kusochek_schastya</a>
+              </li>
+              <li class="contacts__item">
+                <span class="contacts__icon">🔵</span>
+                <a href="https://vk.com/kusochek_schastya" target="_blank" rel="noopener noreferrer">vk.com/kusochek_schastya</a>
+              </li>
+              <li class="contacts__item">
+                <span class="contacts__icon">📷</span>
+                <a href="https://instagram.com/kusochek_schastya" target="_blank" rel="noopener noreferrer">@kusochek_schastya</a>
+              </li>
+              <li class="contacts__item">
+                <span class="contacts__icon">📍</span>
+                <span>Гагарин, доставка по городу</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 8. Подвал (Footer) -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__logo">Кусочек счастья</span>
+
+      <div class="footer__socials">
+        <a href="https://t.me/kusochek_schastya" class="footer__social" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+          </svg>
+        </a>
+        <a href="https://vk.com/kusochek_schastya" class="footer__social" target="_blank" rel="noopener noreferrer" aria-label="VK">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.677.863 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.254-1.406 2.151-3.574 2.151-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.049.17.49-.085.744-.576.744z"/>
+          </svg>
+        </a>
+        <a href="https://instagram.com/kusochek_schastya" class="footer__social" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+          </svg>
+        </a>
+      </div>
+
+      <p class="footer__copy">© 2026 Кусочек счастья. Сделано с любовью 💕</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
