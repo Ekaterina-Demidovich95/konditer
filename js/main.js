@@ -6,7 +6,40 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initCatalogFilters();
   initOrderForm();
+  initScrollReveal();
+  initHeroReveal();
 });
+
+/* --- Появление элементов при загрузке hero --- */
+function initHeroReveal() {
+  const heroReveals = document.querySelectorAll('.hero .reveal');
+  requestAnimationFrame(() => {
+    heroReveals.forEach((el) => el.classList.add('reveal--visible'));
+  });
+}
+
+/* --- Появление элементов при скролле --- */
+function initScrollReveal() {
+  const reveals = document.querySelectorAll('.section .reveal, .card, .step, .review-card');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal--visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  reveals.forEach((el) => {
+    if (!el.closest('.hero')) {
+      observer.observe(el);
+    }
+  });
+}
 
 /* --- Sticky header с тенью при скролле --- */
 function initHeader() {
