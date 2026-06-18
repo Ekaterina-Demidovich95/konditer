@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initOrderForm();
   initScrollReveal();
   initHeroReveal();
+  initReviewsCarousel();
 });
 
 /* --- Появление элементов при загрузке hero --- */
@@ -20,7 +21,7 @@ function initHeroReveal() {
 
 /* --- Появление элементов при скролле --- */
 function initScrollReveal() {
-  const reveals = document.querySelectorAll('.section .reveal, .card, .step, .review-card');
+  const reveals = document.querySelectorAll('.section .reveal, .card, .step, .promo-card, .reviews-carousel');
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -109,4 +110,47 @@ function initOrderForm() {
       successMsg.hidden = true;
     }, 5000);
   });
+}
+
+/* --- Карусель отзывов (stagger) --- */
+function initReviewsCarousel() {
+  const carousel = document.getElementById('reviewsCarousel');
+  if (!carousel) return;
+
+  const cards = [...carousel.querySelectorAll('.review-card')];
+  const prevBtn = carousel.querySelector('[data-dir="-1"]');
+  const nextBtn = carousel.querySelector('[data-dir="1"]');
+  let activeIndex = 0;
+
+  function updatePositions() {
+    const total = cards.length;
+
+    cards.forEach((card, index) => {
+      let position = index - activeIndex;
+
+      if (position > 1) position -= total;
+      if (position < -1) position += total;
+
+      card.dataset.position = String(position);
+      card.setAttribute('aria-hidden', position !== 0 ? 'true' : 'false');
+    });
+  }
+
+  function move(steps) {
+    const total = cards.length;
+    activeIndex = (activeIndex + steps + total) % total;
+    updatePositions();
+  }
+
+  cards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const position = Number(card.dataset.position);
+      if (position !== 0) move(position);
+    });
+  });
+
+  prevBtn?.addEventListener('click', () => move(-1));
+  nextBtn?.addEventListener('click', () => move(1));
+
+  updatePositions();
 }
