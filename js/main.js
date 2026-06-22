@@ -92,6 +92,8 @@ function initCatalogFilters() {
 function initOrderForm() {
   const form = document.getElementById('orderForm');
   const successMsg = document.getElementById('formSuccess');
+  const consent = form.querySelector('#consent');
+  const consentError = document.getElementById('consentError');
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -99,7 +101,15 @@ function initOrderForm() {
     const name = form.querySelector('#name').value.trim();
     const phone = form.querySelector('#phone').value.trim();
 
+    consentError.hidden = true;
+
     if (!name || !phone) {
+      return;
+    }
+
+    if (!consent.checked) {
+      consentError.hidden = false;
+      consent.focus();
       return;
     }
 
@@ -109,6 +119,12 @@ function initOrderForm() {
     setTimeout(() => {
       successMsg.hidden = true;
     }, 5000);
+  });
+
+  consent?.addEventListener('change', () => {
+    if (consent.checked) {
+      consentError.hidden = true;
+    }
   });
 }
 

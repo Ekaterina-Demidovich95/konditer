@@ -435,6 +435,15 @@
               <input type="date" id="date" name="date" class="form-input">
             </div>
 
+            <div class="form-group form-group--consent">
+              <label class="form-consent" for="consent">
+                <input type="checkbox" id="consent" name="consent" class="form-consent__input" required>
+                <span class="form-consent__mark" aria-hidden="true"></span>
+                <span class="form-consent__text">Я согласен(а) на обработку персональных данных</span>
+              </label>
+              <p class="form-error" id="consentError" hidden>Необходимо дать согласие на обработку персональных данных</p>
+            </div>
+
             <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
 
             <p class="form-success" id="formSuccess" hidden>
